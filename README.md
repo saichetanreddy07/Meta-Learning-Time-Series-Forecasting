@@ -60,7 +60,7 @@ The project uses multiple frequencies from the M4 dataset:
 
 ## Dataset Source
 
-[https://www.mcompetitions.unic.ac.cy/the-dataset/](https://www.mcompetitions.unic.ac.cy/the-dataset/)
+[hhttps://www.kaggle.com/datasets/yogesh94/m4-forecasting-competition-dataset](https://www.kaggle.com/datasets/yogesh94/m4-forecasting-competition-dataset)
 
 ## Note
 
