@@ -1,22 +1,49 @@
 def train_arima(train):
+
     from statsmodels.tsa.arima.model import ARIMA
+    import pandas as pd
     import numpy as np
 
     try:
-        values = train.dropna().astype(float)
+        # Convert safely to numeric
+        values = pd.to_numeric(
+            train,
+            errors="coerce"
+        ).dropna()
+
     except AttributeError:
-        values = np.asarray(train, dtype=float)
-        values = values[~np.isnan(values)]
 
+        values = np.asarray(
+            train,
+            dtype=float
+        )
+
+        values = values[
+            ~np.isnan(values)
+        ]
+
+    # Ensure enough values
     if len(values) < 2:
-        raise ValueError("Not enough data")
+        raise ValueError(
+            "Not enough numeric data"
+        )
 
-    model = ARIMA(values, order=(1, 1, 1))
+    # Train ARIMA
+    model = ARIMA(
+        values,
+        order=(1, 1, 1)
+    )
+
     return model.fit()
 
 
 def forecast_arima(model, steps: int):
-    if steps <= 0:
-        raise ValueError("steps must be positive")
 
-    return model.forecast(steps=steps)
+    if steps <= 0:
+        raise ValueError(
+            "steps must be positive"
+        )
+
+    return model.forecast(
+        steps=steps
+    )
