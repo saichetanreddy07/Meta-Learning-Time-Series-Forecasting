@@ -1,0 +1,12 @@
+[
+  "length",
+  "mean",
+  "variance",
+  "standard_deviation",
+  "trend",
+  "autocorrelation",
+  "skewness",
+  "kurtosis",
+  "seasonality_strength",
+  "adf_statistic"
+]
