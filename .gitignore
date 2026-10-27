@@ -1,6 +1,25 @@
+# Python
 __pycache__/
-*.pyc
-.idea/
-venv/
+*.py[cod]
 
-data/raw/
+# Virtual Environments
+venv/
+.venv/
+
+# IDEs
+.idea/
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Large raw datasets
+data/raw/train/
+data/raw/test/
+
+# Generated files (can be recreated)
+data/processed/meta_dataset.csv
+
+# Trained models
+models/
